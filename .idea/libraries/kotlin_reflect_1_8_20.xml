@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="kotlin-reflect-1.8.20">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../kotlin-reflect-1.8.20.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

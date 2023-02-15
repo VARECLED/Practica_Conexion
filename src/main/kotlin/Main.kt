@@ -5,9 +5,9 @@ import properties.PropertiesUtil
 import java.util.Properties
 
 fun main() {
-    //val property: Properties? = PropertiesUtil
-    //    .loadProperty("properties/DBMySQL")
-    //println(property)
+    val property: Properties? = PropertiesUtil
+        .loadProperty("properties/DBMySQL")
+    println(property)
     val mySql: IDBAdapter = MySqlDBAdapter()
     println(mySql.getConnection().toString())
 

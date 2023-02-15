@@ -1,6 +1,7 @@
 package factorymethod
 
 import properties.PropertiesUtil.loadProperty
+import kotlin.reflect.full.createInstance
 
 class DBFactory {
     private  val _DB_FACTORY_PROPERTY_URL = "properties/DBFactory"
@@ -17,7 +18,7 @@ class DBFactory {
         get() = try {
             val property = loadProperty(_DB_FACTORY_PROPERTY_URL)
             val defaultDBClass = property!!.getProperty(_DEFAULT_DB_CLASS_PROP)
-            Class.forName(defaultDBClass) as IDBAdapter
+            Class.forName(defaultDBClass).kotlin.createInstance() as IDBAdapter
         } catch (e: Exception) {
             e.printStackTrace()
             null

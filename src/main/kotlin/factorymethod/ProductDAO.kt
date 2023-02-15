@@ -19,7 +19,8 @@ class ProductDAO() {
                 productList.add(
                     Product(
                         results.getLong(1),
-                        results.getString(2), results.getDouble(3)
+                        results.getString(2),
+                        results.getDouble(3)
                     )
                 )
             }
@@ -40,11 +41,11 @@ class ProductDAO() {
         try {
             val statement: PreparedStatement = connection!!
                 .prepareStatement(
-                    ("INSERT INTO Productos(idProductos,"
-                            + "productName, productPrice) VALUES (?,?,?)")
+                    ("INSERT INTO product("
+                            + "description, price) VALUES (?,?)")
                 )
-            statement.setString(2, product.description)
-            statement.setDouble(3, product.price)
+            statement.setString(1, product.description)
+            statement.setDouble(2, product.price)
             statement.executeUpdate()
             return true
         } catch (e: Exception) {
