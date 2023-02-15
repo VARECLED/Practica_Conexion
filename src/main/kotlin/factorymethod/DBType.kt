@@ -1,5 +1,5 @@
 package factorymethod
 
 enum class DBType {
-    ORACLE, MYSQL
+    ORACLE, MYSQL, POSTGRESQL
 }

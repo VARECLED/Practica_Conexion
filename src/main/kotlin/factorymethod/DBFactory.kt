@@ -10,6 +10,7 @@ class DBFactory {
         return when (dbType) {
             DBType.MYSQL -> MySqlDBAdapter()
             DBType.ORACLE -> OracleDBAdapter()
+            DBType.POSTGRESQL -> PostgresDBAdapter()
             else -> throw IllegalArgumentException("No soportado")
         }
     }
