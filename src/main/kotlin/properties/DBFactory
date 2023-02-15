@@ -1,1 +1,1 @@
-defaultDBClass factorymethod.MySqlDBAdapter
+defaultDBClass factorymethod.PostgresDBAdapter
