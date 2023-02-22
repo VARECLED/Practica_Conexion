@@ -1,5 +1,5 @@
 package abstractfactory
 
 interface IProductService {
-    fun getProducts(): ArrayList<String>
+    fun getProducts(): List<String>
 }

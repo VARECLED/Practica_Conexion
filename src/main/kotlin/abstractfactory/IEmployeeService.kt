@@ -1,5 +1,5 @@
 package abstractfactory
 
 interface IEmployeeService {
-    fun getEmployee(): ArrayList<String>
+    fun getEmployee(): List<String>
 }
