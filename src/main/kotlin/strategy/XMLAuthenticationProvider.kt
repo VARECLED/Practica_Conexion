@@ -1,20 +1,19 @@
 package strategy
 
-import org.w3c.dom.Document
 import java.io.IOException
 import java.io.InputStream
 import javax.xml.parsers.DocumentBuilderFactory
-import javax.xml.xpath.XPathFactory
 import javax.xml.xpath.XPath
+import javax.xml.xpath.XPathFactory
+import org.w3c.dom.Document
 
-
-class XMLAuthenticationProvider: IAuthenticationStrategy {
-    private val rolXPath = "Users/User[@userName='%s'” + “and @password='%s']/@rol"
+class XMLAuthenticationProvider : IAuthenticationStrategy {
+    private val rolXPath = "Users/User[@userName='%s' and @password='%s']/@rol"
 
     override fun authenticate(userName: String?, passwrd: String?): Principal? {
         var file: InputStream? = null
         return try {
-            file = javaClass.classLoader.getResourceAsStream("/UserFile.xml")
+            file = javaClass.classLoader.getResourceAsStream("strategy/UserFile.xml")
             val builderFactory = DocumentBuilderFactory.newInstance()
             val builder = builderFactory.newDocumentBuilder()
             val xmlDocument: Document = builder.parse(file)
@@ -29,8 +28,9 @@ class XMLAuthenticationProvider: IAuthenticationStrategy {
             null
         } finally {
             try {
-                file!!.close()
-            } catch (_: IOException) {
+                file?.close()
+            } catch (e: IOException) {
+                e.printStackTrace()
             }
         }
     }
