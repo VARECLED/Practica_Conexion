@@ -14,7 +14,7 @@ class XMLAuthenticationProvider: IAuthenticationStrategy {
     override fun authenticate(userName: String?, passwrd: String?): Principal? {
         var file: InputStream? = null
         return try {
-            file = javaClass.classLoader.getResourceAsStream("/strategy/UserFile.xml")
+            file = javaClass.classLoader.getResourceAsStream("/UserFile.xml")
             val builderFactory = DocumentBuilderFactory.newInstance()
             val builder = builderFactory.newDocumentBuilder()
             val xmlDocument: Document = builder.parse(file)
@@ -30,7 +30,7 @@ class XMLAuthenticationProvider: IAuthenticationStrategy {
         } finally {
             try {
                 file!!.close()
-            } catch (ex: IOException) {
+            } catch (_: IOException) {
             }
         }
     }

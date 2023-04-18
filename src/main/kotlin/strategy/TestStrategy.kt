@@ -11,21 +11,24 @@ object StrategyMain {
         var principal: Principal? = null
         do {
             println("\n\nPlease authenticate:")
-            println("User:")
+            print("User: ")
             val userName: String = readln()
-            println("Pasword:")
+            print("\nPasword: ")
             val password: String = readln()
             principal = authProvider.authenticate(userName, password)
             if (principal == null) {
                 println("User or password invalid.")
-                println("Do you want to change the authentication method? (S/N)")
+                print("Do you want to change the authentication method? (S/N): ")
                 val op: String = readln()
                 if (op.equals("S", ignoreCase = true)) {
                     changeAuthetificationStrategy()
+                }else{
+                    println("\nSee you")
+                    break
                 }
             }
         } while (principal == null)
-        println("Successful authentication")
+        println("\nSuccessful authentication")
         println(principal)
     }
 
@@ -34,6 +37,7 @@ object StrategyMain {
         println("1.-OnMemory Authentication")
         println("2.-SQL Authentication")
         println("3.-XML Authentication")
+        println("Your option: ")
         val op: Int = readln().toInt()
         when (op) {
             1 -> {
