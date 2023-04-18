@@ -5,3 +5,4 @@ class NoEncryptAlgorithm: IEncryptAlgorithm {
         return message
     }
 }
+
