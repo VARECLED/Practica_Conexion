@@ -10,10 +10,10 @@ object StrategyMain {
         changeAuthetificationStrategy()
         var principal: Principal? = null
         do {
-            println("\n\nPlease authenticate:")
+            println("Please authenticate:")
             print("User: ")
             val userName: String = readln()
-            print("\nPasword: ")
+            print("Pasword: ")
             val password: String = readln()
             principal = authProvider.authenticate(userName, password)
             if (principal == null) {
