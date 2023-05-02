@@ -9,7 +9,7 @@ fun main(){
     val noImpl: IMessageEncrypt = DefaultMessageEncryptImpl(
         NoEncryptAlgorithm())
     try {
-        val message = "{\"fullname\":\"Ambrosio Cardoso Jimenez\",\"age\":48}"
+        val message = "{\"fullname\":\"Clemente Eduardo Vasquez Reyes\",\"age\":21}"
         val messageAES = aesImpl.encryptMessage(message, "HG58YZ3CR9123456")
         println("messageAES > $messageAES\n");
         val  messageDES = desImpl.encryptMessage(message, "XMzDdG4D03CKm2Ix")
