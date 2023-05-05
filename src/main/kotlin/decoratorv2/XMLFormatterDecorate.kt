@@ -1,10 +1,8 @@
 package decorator_v2
 
-
-
-
 import org.json.JSONObject
 import org.json.XML
+
 class XMLFormatterDecorate(private var message:IMessage): MessageDecorator(message) {
     override fun processMessage(): IMessage {
         message = message.processMessage()
