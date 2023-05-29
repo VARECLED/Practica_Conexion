@@ -3,7 +3,6 @@ package visitor
 import javax.xml.bind.JAXBContext
 import javax.xml.bind.Unmarshaller
 
-
 object VisitorMain {
     @JvmStatic
     fun main(args: Array<String>) {
