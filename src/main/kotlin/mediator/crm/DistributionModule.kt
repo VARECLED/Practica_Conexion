@@ -1,8 +1,8 @@
-package crm
+package mediator.crm
 
-import dto.SaleOrder
-import module.AbstractModule
-import module.ModuleMessage
+import mediator.dto.SaleOrder
+import mediator.module.AbstractModule
+import mediator.module.ModuleMessage
 
 class DistributionModule: AbstractModule() {
     companion object {

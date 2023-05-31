@@ -1,4 +1,4 @@
-package dto
+package mediator.dto
 
 import java.util.ArrayList
 open class Sale {

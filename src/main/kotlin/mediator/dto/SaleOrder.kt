@@ -1,4 +1,6 @@
-package dto
+package mediator.dto
+
+import mediator.dto.Sale
 
 class SaleOrder(var id: String) : Sale() {
 

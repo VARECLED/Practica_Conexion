@@ -1,6 +1,6 @@
-package module
+package mediator.module
 
-import dto.SaleOrder
+import mediator.dto.SaleOrder
 
 abstract class AbstractModule {
 

@@ -1,6 +1,6 @@
-import dto.Product
-import dto.Sale
-import impl.*
+import mediator.dto.Product
+import mediator.dto.Sale
+import mediator.impl.*
 import java.lang.NullPointerException
 
 fun main() {

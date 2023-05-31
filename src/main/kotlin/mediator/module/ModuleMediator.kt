@@ -1,4 +1,4 @@
-package module
+package mediator.module
 
 import java.util.HashMap
 

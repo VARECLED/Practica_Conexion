@@ -1,4 +1,4 @@
-package dto
+package mediator.dto
 
 class Product(private var name: String) {
 

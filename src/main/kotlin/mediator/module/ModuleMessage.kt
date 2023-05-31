@@ -1,4 +1,4 @@
-package module
+package mediator.module
 
 class ModuleMessage(
     private val source: String,

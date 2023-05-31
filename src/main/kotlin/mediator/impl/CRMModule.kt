@@ -1,11 +1,11 @@
-package impl
+package mediator.impl
 
-import crm.DistributionModule
-import dto.Sale
-import dto.SaleOrder
-import module.AbstractModule
-import module.ModuleMediator
-import module.ModuleMessage
+import mediator.crm.DistributionModule
+import mediator.dto.Sale
+import mediator.dto.SaleOrder
+import mediator.module.AbstractModule
+import mediator.module.ModuleMediator
+import mediator.module.ModuleMessage
 import java.util.*
 import java.util.logging.Level
 import java.util.logging.Logger
@@ -41,7 +41,10 @@ class CRMModule : AbstractModule() {
         val saleOrder = SaleOrder(id)
         saleOrder.setProductos(sale.getProductos())
 
-        val stockEvent = ModuleMessage(MODULE_NAME, StockModule.MODULE_NAME, StockModule.OPERATION_DECREMENT_STOCK, saleOrder)
+        val stockEvent = ModuleMessage(
+            MODULE_NAME,
+            StockModule.MODULE_NAME,
+            StockModule.OPERATION_DECREMENT_STOCK, saleOrder)
         mediator.mediate(stockEvent)
 
         Thread {

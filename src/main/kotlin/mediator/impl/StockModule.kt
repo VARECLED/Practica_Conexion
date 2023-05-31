@@ -1,10 +1,10 @@
-package impl
+package mediator.impl
 
-import dto.ProductRequest
-import dto.SaleOrder
-import module.AbstractModule
-import module.ModuleMediator
-import module.ModuleMessage
+import mediator.dto.ProductRequest
+import mediator.dto.SaleOrder
+import mediator.module.AbstractModule
+import mediator.module.ModuleMediator
+import mediator.module.ModuleMessage
 
 class StockModule : AbstractModule() {
     var mediator: ModuleMediator = ModuleMediator.getInstance()
