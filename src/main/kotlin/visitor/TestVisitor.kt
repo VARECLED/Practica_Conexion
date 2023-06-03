@@ -1,16 +1,16 @@
 package visitor
 
-import javax.xml.bind.JAXBContext
-import javax.xml.bind.Unmarshaller
+import org.json.JSONObject
+import org.json.XML
 
 object VisitorMain {
     @JvmStatic
     fun main(args: Array<String>) {
         var project: Project? = null
         try {
-            val context = JAXBContext.newInstance(Project::class.java)
-            val unmarshaller: Unmarshaller = context.createUnmarshaller()
-            project = unmarshaller.unmarshal(VisitorMain::class.java.getResourceAsStream("Project.xml")) as Project
+            val xmlString = VisitorMain::class.java.getResourceAsStream("Project.xml")?.bufferedReader().use { it!!.readText() }
+            val jsonObject = XML.toJSONObject(xmlString)
+            project = Project(jsonObject.toString())
         } catch (e: Exception) {
             println(e.message)
             e.printStackTrace()
